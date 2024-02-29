@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "course_name": "Introduction to Computer Science",
+      "course_description": "This course provides an overview of computer science fundamentals including algorithms, data structures, and programming concepts.",
+      "course_img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSig8YUl4Yd-420yNi1_hIpq9cC8yEV1Ymk2g&usqp=CAU",
+      "price": 49.99,
+      "credit": 3
+    },
+    {
+      "id": 2,
+      "course_name": "Web Development Bootcamp",
+      "course_description": "Join this intensive bootcamp to learn full-stack web development, covering front-end and back-end technologies.",
+      "course_img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT08ZwHlIKWVyL1QNAP-13w-U924P0EC3fyqQ&usqp=CAU",
+      "price": 99.99,
+      "credit": 5
+    },
+    {
+      "id": 3,
+      "course_name": "Data Science Fundamentals",
+      "course_description": "Explore the basics of data science including statistical analysis, data visualization, and machine learning techniques.",
+      "course_img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaDqXE_a3sWd2mdfuDiNWWYM3vs9_pDPIgeA&usqp=CAU",
+      "price": 79.99,
+      "credit": 4
+    },
+    {
+      "id": 4,
+      "course_name": "Machine Learning Basics",
+      "course_description": "Dive into the world of machine learning, covering supervised and unsupervised learning algorithms along with practical applications.",
+      "course_img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_6z38JsTMJJC6M6RhybL5LSvmUR_-0B0qPw&usqp=CAU",
+      "price": 129.99,
+      "credit": 6
+    },
+    {
+      "id": 5,
+      "course_name": "Introduction to Artificial Intelligence",
+      "course_description": "Learn the fundamentals of artificial intelligence, including neural networks, natural language processing, and AI ethics.",
+      "course_img": "https://static.javatpoint.com/tutorial/ai/images/introduction-to-artificial-intelligence.png",
+      "price": 89.99,
+      "credit": 4
+    },
+    {
+      "id": 6,
+      "course_name": "Cybersecurity Essentials",
+      "course_description": "Get essential knowledge about cybersecurity threats, protocols, and defense mechanisms to secure your digital assets.",
+      "course_img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8omGhkisRswTEUU11x2Zn7HRNgKwQlgwBHA&usqp=CAU",
+      "price": 69.99,
+      "credit": 4
+    },
+    {
+      "id": 7,
+      "course_name": "Mobile App Development",
+      "course_description": "Learn how to develop mobile applications for iOS and Android platforms using popular frameworks and tools.",
+      "course_img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx5TlH5DJMmkOH8eBQLYLC0OkMeH1BNfMN7Q&usqp=CAU",
+      "price": 109.99,
+      "credit": 5
+    },
+    {
+      "id": 8,
+      "course_name": "Database Management",
+      "course_description": "Master the principles of database management, including SQL queries, database design, and optimization techniques.",
+      "course_img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH18lKgMWmeBq1VJ3H4vtXiVVPGV4ncnxE9w&usqp=CAU",
+      "price": 79.99,
+      "credit": 4
+    },
+    {
+      "id": 9,
+      "course_name": "Software Engineering Principles",
+      "course_description": "Explore the key principles of software engineering, covering software development methodologies, testing, and maintenance.",
+      "course_img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9LzghzndA59Trn-0MavYcO5SEqjy72i3E-g&usqp=CAU",
+      "price": 99.99,
+      "credit": 5
+    },
+    {
+      "id": 10,
+      "course_name": "Cloud Computing Fundamentals",
+      "course_description": "Gain a solid understanding of cloud computing concepts, services, and deployment models to build scalable and reliable applications.",
+      "course_img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWqTqWR8cPRM6d98Zjm3g--QDUSPC__cKvjePUkWCg58Lky0DiJyA-pDOXn5KfXbTnYkE&usqp=CAU",
+      "price": 89.99, 
+      "credit": 4
+    }
+  ]
+  
