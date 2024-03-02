@@ -4,7 +4,7 @@ import Courses from './components/courses/Courses/Courses'
 import CoursesCarts from './components/courses/coursesCarsts/CoursesCarts'
 import Header from './components/hedaer/Header'
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'
+import 'react-toastify/dist/ReactToastify.css';
 import Footer from './components/footer/Footer'
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
   const [selectCouresName, setSelectCouresName] = useState([])
   const [creditValue, setCreditValue] = useState(0)
   const [remaingCreditValue, setRemaingCreditValue] = useState(20)
+  const [price, setPrice] = useState(0)
 
 
 
@@ -23,8 +24,8 @@ function App() {
   }, [])
 
 
-  const notify = () => toast.warn('You all ready added');
-
+  const notify = () => toast.warn('You already added');
+  const  remainingCredit = () => toast.info('OPPS! You all ready full fil creatid');
 
   //click select butoon and get course name
   const handdleSelectedCourse = (course) => {
@@ -34,33 +35,28 @@ function App() {
       const newCourses = [...selectCouresName, course];
       const newCreditValue = creditValue + course.credit;
       const newRemaingCreditValue = 20 - newCreditValue;
+      const newPrice = parseFloat(price + course.price)
 
 
       if (newRemaingCreditValue < 0) {
-        return alert('full')
+        return remainingCredit()
       } else {
         setSelectCouresName(newCourses);
         setCreditValue(newCreditValue)
         setRemaingCreditValue(newRemaingCreditValue)
+        setPrice(newPrice.toFixed(2))
       }
     }
     else {
       notify()
     }
-
-
   }
-  // console.log(creditValue)
-  // console.log(remaingCreditValue)
-  // console.log(remaingCreditValue - creditValue)
-
 
 
   return (
     <>
       <Header></Header>
-      {/* <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Opencart</label> */}
-      {/* main content in drawer */}
+
       <div className="drawer lg:drawer-open gap-4  ">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center  justify-center">
@@ -70,10 +66,6 @@ function App() {
             key={courses.id}
             handdleSelectedCourse={handdleSelectedCourse}
           ></Courses>
-
-
-
-
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
@@ -83,6 +75,7 @@ function App() {
               selectCouresName={selectCouresName}
               creditValue={creditValue}
               remaingCreditValue={remaingCreditValue}
+              price={price}
             ></CoursesCarts>
           </ul>
 

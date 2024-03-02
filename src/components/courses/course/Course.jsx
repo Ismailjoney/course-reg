@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from 'react-toastify';
 
 const Course = ({ course, handdleSelectedCourse }) => {
     const [showFullDescription, setShowFullDescription] = useState(false)
@@ -20,10 +20,10 @@ const Course = ({ course, handdleSelectedCourse }) => {
     return (
         <div className="card card-compact w-70 bg-base-100 shadow-xl">
             <figure><img src={course_img} alt="Shoes" /></figure>
-            <div className="card-body">
+            <div className="card-body  text-left ">
                 <h2 className="card-title">{course_name}</h2>
-                <div>
-                    <p>
+                <div className=''>
+                    <p className='text-justify'>
                         {course_description.length > 60 && !showFullDescription ?
                             <>
                                 {course_description.slice(0, 60)}
@@ -44,11 +44,12 @@ const Course = ({ course, handdleSelectedCourse }) => {
                 </div>
                 <button
                     onClick={() => {
-                        handdleSelectedCourse(course)
+                        handdleSelectedCourse(course);
+
                     }} className="btn btn-primary">Select </button>
                 <ToastContainer
                     position="top-center"
-                    autoClose={5000}
+                    autoClose={2000}
                     hideProgressBar={false}
                     newestOnTop={false}
                     closeOnClick
@@ -57,7 +58,9 @@ const Course = ({ course, handdleSelectedCourse }) => {
                     draggable
                     pauseOnHover
                     theme="light"
-                    transition:Bounce/>
+                
+                />
+
             </div>
         </div >
     );

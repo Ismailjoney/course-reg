@@ -8,7 +8,7 @@ const Header = () => {
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
-                    <h1 className="mb-5 text-3xl font-bold text-pink-300">Wellcome To Our <span className='font-bold text-red-800'>Online Course</span></h1>
+                    <h1 className="mb-5 text-4xl font-bold  text-cyan-50">Wellcome To Our <span className='font-bold text-cyan-50'>Online Course</span></h1>
                     <p className="mb-5 text-white">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     <img src={cover} alt=''  />
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
