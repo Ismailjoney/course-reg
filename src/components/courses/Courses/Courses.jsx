@@ -1,7 +1,7 @@
-import React from 'react';
 import Course from '../course/Course';
 
-const Courses = ({courses}) => {
+const Courses = ({ courses, handdleSelectedCourse}) => {
+
     return (
         <div>
             <h2>Courses</h2>
@@ -10,6 +10,7 @@ const Courses = ({courses}) => {
                     courses.map(course => <Course
                         course={course}
                         key={course.id}
+                        handdleSelectedCourse={handdleSelectedCourse}
                     ></Course>)
                 }
             </div>

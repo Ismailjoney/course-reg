@@ -70,14 +70,7 @@
       "course_img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9LzghzndA59Trn-0MavYcO5SEqjy72i3E-g&usqp=CAU",
       "price": 99.99,
       "credit": 5
-    },
-    {
-      "id": 10,
-      "course_name": "Cloud Computing Fundamentals",
-      "course_description": "Gain a solid understanding of cloud computing concepts, services, and deployment models to build scalable and reliable applications.",
-      "course_img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWqTqWR8cPRM6d98Zjm3g--QDUSPC__cKvjePUkWCg58Lky0DiJyA-pDOXn5KfXbTnYkE&usqp=CAU",
-      "price": 89.99, 
-      "credit": 4
     }
+     
   ]
   

@@ -1,9 +1,13 @@
 import React from 'react';
 
-const CoursesCarts = () => {
+const CoursesCarts = ({ selectCouresName }) => {
+    console.log(selectCouresName)
     return (
-        <div>
+        <div >
             <h2>Courses Cart</h2>
+              {
+                selectCouresName.map((courseName, idx) => <h3 key={idx}>{courseName.course_name}</h3>)
+              }
         </div>
     );
 };
