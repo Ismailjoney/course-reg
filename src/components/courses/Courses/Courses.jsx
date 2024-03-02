@@ -4,7 +4,7 @@ const Courses = ({ courses, handdleSelectedCourse}) => {
 
     return (
         <div>
-            <h2>Courses</h2>
+            <h2 className='text-3xl font-bold'>Our Courses</h2>
             <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     courses.map(course => <Course

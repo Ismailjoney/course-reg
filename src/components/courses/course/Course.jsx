@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 const Course = ({ course, handdleSelectedCourse }) => {
     const [showFullDescription, setShowFullDescription] = useState(false)
@@ -43,10 +44,8 @@ const Course = ({ course, handdleSelectedCourse }) => {
                 </div>
                 <button
                     onClick={() => {
-                        handdleSelectedCourse(course);
-
-                    }}
-                    className="btn btn-primary">Select </button>
+                        handdleSelectedCourse(course)
+                    }} className="btn btn-primary">Select </button>
                 <ToastContainer
                     position="top-center"
                     autoClose={5000}
@@ -57,9 +56,8 @@ const Course = ({ course, handdleSelectedCourse }) => {
                     pauseOnFocusLoss
                     draggable
                     pauseOnHover
-                    theme="dark"
-                    transition:Bounce
-                ></ToastContainer>
+                    theme="light"
+                    transition:Bounce/>
             </div>
         </div >
     );

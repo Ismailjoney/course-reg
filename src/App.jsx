@@ -3,13 +3,15 @@ import './App.css'
 import Courses from './components/courses/Courses/Courses'
 import CoursesCarts from './components/courses/coursesCarsts/CoursesCarts'
 import Header from './components/hedaer/Header'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import Footer from './components/footer/Footer'
 
 function App() {
-  const notify = () => toast("You all ready select course");
+
   const [courses, setCourses] = useState([])
   const [selectCouresName, setSelectCouresName] = useState([])
+  const [creditValue, setCreditValue] = useState(0)
 
 
   useEffect(() => {
@@ -19,26 +21,31 @@ function App() {
   }, [])
 
 
+  const notify = () => toast.warn('You all ready added');
+   
+
+
+
   //click select butoon and get course name
   const handdleSelectedCourse = (course) => {
     const isCourseExists = selectCouresName.find(item => item.id === course.id);
 
     if (!isCourseExists) {
       const newCourses = [...selectCouresName, course];
+      setCreditValue(course.credit + creditValue)
       setSelectCouresName(newCourses);
     }
     else {
       notify()
     }
-
   }
-
 
 
 
   return (
     <>
       <Header></Header>
+      {/* <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Opencart</label> */}
       {/* main content in drawer */}
       <div className="drawer lg:drawer-open gap-4  ">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -51,7 +58,7 @@ function App() {
           ></Courses>
 
 
-          {/* <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
+
 
         </div>
         <div className="drawer-side">
@@ -60,12 +67,13 @@ function App() {
             {/* Sidebar content here */}
             <CoursesCarts
               selectCouresName={selectCouresName}
-
+              creditValue={creditValue}
             ></CoursesCarts>
           </ul>
 
         </div>
       </div>
+      <Footer></Footer>
     </>
   )
 }
