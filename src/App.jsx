@@ -12,6 +12,8 @@ function App() {
   const [courses, setCourses] = useState([])
   const [selectCouresName, setSelectCouresName] = useState([])
   const [creditValue, setCreditValue] = useState(0)
+  const [remaingCreditValue, setRemaingCreditValue] = useState(20)
+
 
 
   useEffect(() => {
@@ -22,8 +24,6 @@ function App() {
 
 
   const notify = () => toast.warn('You all ready added');
-   
-
 
 
   //click select butoon and get course name
@@ -32,13 +32,27 @@ function App() {
 
     if (!isCourseExists) {
       const newCourses = [...selectCouresName, course];
-      setCreditValue(course.credit + creditValue)
-      setSelectCouresName(newCourses);
+      const newCreditValue = creditValue + course.credit;
+      const newRemaingCreditValue = 20 - newCreditValue;
+
+
+      if (newRemaingCreditValue < 0) {
+        return alert('full')
+      } else {
+        setSelectCouresName(newCourses);
+        setCreditValue(newCreditValue)
+        setRemaingCreditValue(newRemaingCreditValue)
+      }
     }
     else {
       notify()
     }
+
+
   }
+  // console.log(creditValue)
+  // console.log(remaingCreditValue)
+  // console.log(remaingCreditValue - creditValue)
 
 
 
@@ -68,6 +82,7 @@ function App() {
             <CoursesCarts
               selectCouresName={selectCouresName}
               creditValue={creditValue}
+              remaingCreditValue={remaingCreditValue}
             ></CoursesCarts>
           </ul>
 
