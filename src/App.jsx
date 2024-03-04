@@ -3,7 +3,7 @@ import './App.css'
 import Courses from './components/courses/Courses/Courses'
 import CoursesCarts from './components/courses/coursesCarsts/CoursesCarts'
 import Header from './components/hedaer/Header'
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './components/footer/Footer'
 
@@ -24,8 +24,13 @@ function App() {
   }, [])
 
 
-  const notify = () => toast.warn('You already added');
-  const  remainingCredit = () => toast.info('OPPS! You all ready full fil creatid');
+  const notify = () => toast.warn('You already added', {
+    theme: 'dark'
+  });
+  const warningMessage = () => toast.info(`OPPS! Your remaing value is ${remaingCreditValue}. You can't added credit more then ${remaingCreditValue}`, {
+    theme: 'dark'
+  });
+  const successMessage = () => toast.success('added successFully')
 
   //click select butoon and get course name
   const handdleSelectedCourse = (course) => {
@@ -38,14 +43,15 @@ function App() {
       const newPrice = parseFloat(price + course.price)
 
 
-      if (newRemaingCreditValue < 0) {
-        return remainingCredit()
-      } else {
-        setSelectCouresName(newCourses);
-        setCreditValue(newCreditValue)
-        setRemaingCreditValue(newRemaingCreditValue)
-        setPrice(newPrice.toFixed(2))
+      if (remaingCreditValue < course.credit) {
+        return warningMessage()
       }
+      setSelectCouresName(newCourses);
+      setCreditValue(newCreditValue)
+      setRemaingCreditValue(newRemaingCreditValue)
+      setPrice(newPrice.toFixed(2))
+      successMessage()
+
     }
     else {
       notify()
@@ -53,10 +59,10 @@ function App() {
   }
 
 
+
   return (
     <>
       <Header></Header>
-
       <div className="drawer lg:drawer-open gap-4  ">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center  justify-center">
@@ -77,13 +83,26 @@ function App() {
               remaingCreditValue={remaingCreditValue}
               price={price}
             ></CoursesCarts>
-          </ul>
 
+          </ul>
         </div>
       </div>
       <Footer></Footer>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+     
+/>
     </>
   )
-}
 
+}
 export default App

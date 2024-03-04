@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css'
-import { ToastContainer } from 'react-toastify';
+ 
 
 const Course = ({ course, handdleSelectedCourse }) => {
     const [showFullDescription, setShowFullDescription] = useState(false)
@@ -15,7 +15,6 @@ const Course = ({ course, handdleSelectedCourse }) => {
     const handdleSeeLess = () => {
         setShowFullDescription(false)
     }
-
 
     return (
         <div className="card card-compact w-70 bg-base-100 shadow-xl">
@@ -45,21 +44,9 @@ const Course = ({ course, handdleSelectedCourse }) => {
                 <button
                     onClick={() => {
                         handdleSelectedCourse(course);
-
                     }} className="btn btn-primary">Select </button>
-                <ToastContainer
-                    position="top-center"
-                    autoClose={2000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    theme="light"
-                
-                />
+
+                 
 
             </div>
         </div >
